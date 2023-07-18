@@ -3,14 +3,17 @@ const router = express.Router();
 
 const mongoose = require("mongoose");
 
-const schema = mongoose;
+const schema = mongoose.Schema;
 
-const postschema = new Schema({
+const postschema = new schema({
   title: String,
-  imagurl: String,
+  imageurl: String,
   description: String,
   postid: String,
 });
 
+router.get('/test',(req,res)=>{
+    res.send("Hllo Wordl using router")
+})
 const PostModel = mongoose.model("posts", postschema);
 module.exports = router;
